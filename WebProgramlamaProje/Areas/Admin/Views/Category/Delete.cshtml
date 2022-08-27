@@ -1,0 +1,31 @@
+﻿@model WebProgramlamaProje.Models.Category
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    
+    <dl class="row">
+        <dt class="col-sm-2">
+            <hr />
+            Kategori Adı
+            <hr />
+        </dt>
+        <div class="vr"></div>
+
+        <dd class="col-sm-10">
+            <hr />
+            @Html.DisplayFor(model => model.Name)
+            <hr />
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Kayıt Listesi</a>
+    </form>
+</div>
